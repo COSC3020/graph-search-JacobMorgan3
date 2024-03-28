@@ -22,12 +22,14 @@ function depthFirstSearch(graph, startNode, targetNode) {
             } 
             if (isThere == false) { // if not already in visited push it to the stack
                 stack.push(graph[tmp][i]);
-                //visited.push(graph[tmp][i]);
+                console.log("this is added to the stack: " + graph[tmp][i]);
             }
         }
         console.log("visited: " + visited);
         console.log("stack: " + stack);
     }
+    
+    return [];
 }
 
 
@@ -39,4 +41,3 @@ targetNode = 1;
 graph = [[1,4],[3],[0],[2],[1,3]];
 
 console.log(depthFirstSearch(graph, startNode, targetNode));
-
