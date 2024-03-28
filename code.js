@@ -36,7 +36,7 @@ function depthFirstSearch(graph, startNode, targetNode) {
 
 startNode = 0;
 
-targetNode = 1;
+targetNode = 2;
 
 graph = [[1,4],[3],[0],[2],[1,3]];
 
@@ -48,14 +48,14 @@ function breadthFirstSearch (graph, startNode, targetNode) {
     let visited = [];
     let queue = [];
     queue.push(startNode);
-    
+    let count = 1;
     while (queue.length > 0) {
-        
+        console.log("loop number : " + count);
+        visited.push(queue[0]);
         if (queue[0] == targetNode) {
             return visited;
         }
-        visited.push(queue[0]);
-        let tmp = queue.shift;
+        let tmp = queue.shift();
         
         for (let i = 0; i < graph[tmp].length; i++) {
             for (let j = 0; j < visited.length; j++) {
@@ -63,10 +63,13 @@ function breadthFirstSearch (graph, startNode, targetNode) {
                     isThere = true;
                 }
             } 
-            if (isThere == false) { // if not already in visited push it to the stack
+            if (isThere == false) { // if not already in visited push it to the queue
                 queue.push(graph[tmp][i]);
-                //console.log("this is added to the queue: " + graph[tmp][i]);
+                console.log("this is added to the queue: " + graph[tmp][i]);
             }
         }
+        console.log("visited: " + visited);
+        console.log("queue: " + queue);
+        count++;
     }
 }
