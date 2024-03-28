@@ -2,12 +2,18 @@ function depthFirstSearch(graph, startNode, targetNode) {
     
     let stack = [];
     let visited = [];
+    let unvisited = [];
+    for (let i = 0; i < graph.length; i++) {
+        unvisited.push(graph[i]);
+    }
     let isThere = false;
     
     stack.push(startNode);
     
-    while (true) {
+    
+    while (unvisited.length != 0) {
         visited.push(stack[stack.length - 1]);
+        unvisited.pop();
         if (stack[stack.length - 1] == targetNode) {
         return visited;
         }
@@ -26,18 +32,20 @@ function depthFirstSearch(graph, startNode, targetNode) {
         isThere = false; //set isThere back to false for the next loop 
         
         
-        //console.log("new loop")
-        //console.log("visited: " + visited);
-        //console.log("stack: " + stack);   
+        console.log("new loop")
+        console.log("visited: " + visited);
+        console.log("stack: " + stack);   
     }
+    return [];
 }
     
 
 
 startNode = 0;
 
-targetNode = 2;
+targetNode = 7;
 
 graph = [[1,4],[3],[0],[2],[1,3]];
 
 console.log(depthFirstSearch(graph, startNode, targetNode));
+
