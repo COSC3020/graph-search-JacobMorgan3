@@ -1,49 +1,40 @@
 function depthFirstSearch(graph, startNode, targetNode) {
     
+    let isThere = false;
     let stack = [];
     let visited = [];
-    let unvisited = [];
-    for (let i = 0; i < graph.length; i++) {
-        unvisited.push(graph[i]);
-    }
-    let isThere = false;
-    
     stack.push(startNode);
     
-    
-    while (unvisited.length != 0) {
+    while (stack.length > 0) {
+        console.log("new loop");
         visited.push(stack[stack.length - 1]);
-        unvisited.pop();
         if (stack[stack.length - 1] == targetNode) {
-        return visited;
+            return visited;
         }
-        stack.pop();
         
-        for (let i = 0; i < graph[visited[visited.length - 1]].length; i++) { //put adjacent nodes on the stack
+        let tmp = stack[stack.length - 1];
+        stack.pop();
+        for (let i = 0; i < graph[tmp].length; i++) {
             for (let j = 0; j < visited.length; j++) {
-                if (visited[j] == graph[visited[visited.length - 1]][i]) {
+                if (visited[j] == graph[tmp][i]) {
                     isThere = true;
                 }
-            }
+            } 
             if (isThere == false) { // if not already in visited push it to the stack
-                stack.push(graph[visited[visited.length - 1]][i]);
+                stack.push(graph[tmp][i]);
+                //visited.push(graph[tmp][i]);
             }
         }
-        isThere = false; //set isThere back to false for the next loop 
-        
-        
-        console.log("new loop")
         console.log("visited: " + visited);
-        console.log("stack: " + stack);   
+        console.log("stack: " + stack);
     }
-    return [];
 }
-    
+
 
 
 startNode = 0;
 
-targetNode = 7;
+targetNode = 1;
 
 graph = [[1,4],[3],[0],[2],[1,3]];
 
