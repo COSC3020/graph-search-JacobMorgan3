@@ -65,7 +65,7 @@ function breadthFirstSearch (graph, startNode, targetNode) {
             } 
             if (isThere == false) { // if not already in visited push it to the queue
                 queue.push(graph[tmp][i]);
-                console.log("this is added to the queue: " + graph[tmp][i]);
+                console.log("added to the queue: " + graph[tmp][i]);
             }
         }
         console.log("visited: " + visited);
