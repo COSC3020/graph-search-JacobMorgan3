@@ -34,13 +34,13 @@ function depthFirstSearch(graph, startNode, targetNode) {
 
 
 
-startNode = 0;
+//startNode = 0;
 
-targetNode = 2;
+//targetNode = 2;
 
-graph = [[1,4],[3],[0],[2],[1,3]];
+//graph = [[1,4],[3],[0],[2],[1,3]];
 
-console.log(breadthFirstSearch(graph, startNode, targetNode));
+//console.log(breadthFirstSearch(graph, startNode, targetNode));
 
 
 function breadthFirstSearch (graph, startNode, targetNode) {
@@ -78,3 +78,8 @@ function breadthFirstSearch (graph, startNode, targetNode) {
     
     return [];
 }
+
+
+
+//add so i can test functions
+module.exports = {depthFirstSearch, breadthFirstSearch};
