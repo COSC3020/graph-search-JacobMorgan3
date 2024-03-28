@@ -1,4 +1,4 @@
-const code = require(" ./code.js");
+const code = require("./code.js");
 const assert = require("assert");
 
 //assign values for graph, startNode, targetNode
