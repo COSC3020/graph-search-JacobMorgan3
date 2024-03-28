@@ -67,5 +67,6 @@ function breadthFirstSearch (graph, startNode, targetNode) {
                 queue.push(graph[tmp][i]);
                 //console.log("this is added to the queue: " + graph[tmp][i]);
             }
+        }
     }
 }
