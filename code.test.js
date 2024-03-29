@@ -35,12 +35,12 @@ assert(arrayEqual(a,b));
 
 ///////////////////////////////////////////////// DFS Test 2: if targetNode is not there then return [] /////////////////////////////////
 //assign values for graph, startNode, targetNode
-let graph = [[1,4],[3],[0],[2],[1,3]];
-let startNode = 0;
-let targetNode = 7;
+graph = [[1,4],[3],[0],[2],[1,3]];
+startNode = 0;
+targetNode = 7;
 
-let a = code.depthFirstSearch(graph, startNode, targetNode);
-let b = 0;
+a = code.depthFirstSearch(graph, startNode, targetNode);
+b = 0;
 
 //test 
 assert(arrayEqual(a,b));
@@ -48,12 +48,12 @@ assert(arrayEqual(a,b));
 
 ///////////////////////////////////////////////// DFS Test 3: The anser should not have repeated nodes /////////////////////////////////
 //assign values for graph, startNode, targetNode
-let graph = [[1,4],[3],[0],[2],[1,3]];
-let startNode = 0;
-let targetNode = 2;
+graph = [[1,4],[3],[0],[2],[1,3]];
+startNode = 0;
+targetNode = 2;
 
-let a = code.depthFirstSearch(graph, startNode, targetNode);
-let b = 4;
+a = code.depthFirstSearch(graph, startNode, targetNode);
+b = 4;
 
 //test 
 assert(noRepeats(a,b));
