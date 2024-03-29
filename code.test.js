@@ -15,4 +15,4 @@ let a = code.depthFirstSearch(graph, startNode, targetNode);
 let b = [0];
 
 //test if startNode == targetNode then return []
-assert(arrayEqual(a,b);
+assert(arrayEqual(a,b));
