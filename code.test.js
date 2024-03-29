@@ -40,7 +40,7 @@ startNode = 0;
 targetNode = 7;
 
 a = code.depthFirstSearch(graph, startNode, targetNode);
-b = 0;
+b = [];
 
 //test 
 assert(arrayEqual(a,b));
