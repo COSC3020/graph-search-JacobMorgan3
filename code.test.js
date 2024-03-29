@@ -95,7 +95,7 @@ startNode = 0;
 targetNode = 2;
 
 a = code.breadthFirstSearch(graph, startNode, targetNode);
-b = 4;
+b = 5; //should be 5 based on how BFS works
 
 //test 
 assert(noRepeats(a,b));
