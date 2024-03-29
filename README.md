@@ -27,6 +27,13 @@ the function and run automatically when you commit through a GitHub action.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
+### Worst Case Runtime DFS
+big $\Theta(V^3)$ Because I have a while loop with two for loops inside it and one for loop nested in the other. At most we will go through all the nodes in the first for loop, in the inner for loop at most we will go through V times, because that loop is going through the visited nodes, and the most visits we can have before ending the program is V, as in we visited all nodes and didn't find the target. The while loop happens at most V times, so we have V * V * V
+
 ## Bonus
 
 Implement and analyze breadth-first search.
+
+### Worst Case Runtime BFS
+big $\Theta(V^3)$
+I have a while loop with two for loops in it, one nested in the other. The while loop happens at most V times. The first for loop happens at most V times as well (if every node was connected). the second for loop happens at most V times (if we visited all nodes and dont find it). So we get V * V * V
