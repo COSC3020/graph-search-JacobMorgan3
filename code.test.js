@@ -7,8 +7,8 @@ function arrayEqual(a, b) {
 }
 
 //////////////Test to check for duplicates taken from Stack Overflow
-function NoRepeats(Array) {
-  return Array.length === new Set(Array).size;
+function NoRepeats(a) {
+  return a.length === new Set(a).size;
 }
 
 
@@ -47,7 +47,7 @@ targetNode = 2;
 a = code.depthFirstSearch(graph, startNode, targetNode);
 
 //test 
-assert(noRepeats(a));
+assert(NoRepeats(a));
 
 
 
@@ -88,4 +88,4 @@ targetNode = 2;
 a = code.breadthFirstSearch(graph, startNode, targetNode);
 
 //test 
-assert(noRepeats(a));
+assert(NoRepeats(a));
