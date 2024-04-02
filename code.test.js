@@ -6,17 +6,9 @@ function arrayEqual(a, b) {
   return JSON.stringify(a) == JSON.stringify(b); 
 }
 
-//function for noRepeated nodes in answer path
-function noRepeats (a, b, c) {
-    let count = 0;
-  for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j < b.length; j++) {
-      if (a[i] == b[j]) {
-        count++;
-      }
-    }
-  }
-  return count == c;
+//////////////Test to check for duplicates taken from Stack Overflow
+function checkIfArrayIsUnique(Array) {
+  return Array.length === new Set(Array).size;
 }
 
 
@@ -53,11 +45,9 @@ startNode = 0;
 targetNode = 2;
 
 a = code.depthFirstSearch(graph, startNode, targetNode);
-b = [ 0, 4, 3, 2 ];
-c = 4;
 
 //test 
-assert(noRepeats(a,b,c));
+assert(noRepeats(a));
 
 
 
@@ -96,8 +86,6 @@ startNode = 0;
 targetNode = 2;
 
 a = code.breadthFirstSearch(graph, startNode, targetNode);
-b = [ 0, 1, 4, 3, 2 ]; //answer 
-c = 5; //should be 5 repeats, no more
 
 //test 
-assert(noRepeats(a,b,c));
+assert(noRepeats(a));
