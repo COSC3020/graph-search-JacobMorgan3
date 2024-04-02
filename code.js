@@ -5,26 +5,23 @@ function depthFirstSearch(graph, startNode, targetNode) {
     let visited = [];
     stack.push(startNode);
     
+    //let count = 1;
     while (stack.length > 0) {
-        //console.log("new loop");
+        //console.log("loop " + count);
         visited.push(stack[stack.length - 1]);
         if (stack[stack.length - 1] == targetNode) {
             return visited;
         }
         
         let tmp = stack[stack.length - 1];
+        //console.log("tmp: " + tmp);
         stack.pop();
-        for (let i = 0; i < graph[tmp].length; i++) {
-            for (let j = 0; j < visited.length; j++) {
-                if (visited[j] == graph[tmp][i]) {
-                    isThere = true;
-                }
-            } 
-            if (isThere == false) { // if not already in visited push it to the stack
+        for (let i = 0; i < graph[tmp].length; i++) { //look at adjacent nodes
+            if (alreadyInVisited(graph, visited, tmp) == false) {
                 stack.push(graph[tmp][i]);
-                //console.log("this is added to the stack: " + graph[tmp][i]);
             }
         }
+        //count++;
         //console.log("visited: " + visited);
         //console.log("stack: " + stack);
     }
@@ -32,6 +29,15 @@ function depthFirstSearch(graph, startNode, targetNode) {
     return [];
 }
 
+
+function alreadyInVisited (graph, visited, tmp) { //function to see if a node is already in the array visited
+    for (let i = 0; i < visited.length; i++) { //loop through visited
+        if (visited[i] != graph[tmp][i]) {
+        }
+        else return true;
+    }
+    return false;
+}
 
 
 //startNode = 0;
@@ -82,4 +88,4 @@ function breadthFirstSearch (graph, startNode, targetNode) {
 
 
 //add so i can test functions
-module.exports = {depthFirstSearch, breadthFirstSearch};
+module.exports = {depthFirstSearch, breadthFirstSearch, alreadyInVisited};
