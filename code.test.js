@@ -100,4 +100,4 @@ b = [ 0, 1, 4, 3, 2 ]; //answer
 c = 5; //should be 5 repeats, no more
 
 //test 
-assert(noRepeats(a,b));
+assert(noRepeats(a,b,c));
