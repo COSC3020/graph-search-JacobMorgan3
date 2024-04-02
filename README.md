@@ -29,7 +29,7 @@ answer, including your reasoning, to this markdown file.
 
 ### Worst Case Runtime DFS 
 I followed an algorithm instructions online to write DFS, I then used DFS to write BFS. 
-big $\Theta(V^2)$ Because I have a while loop with one for loop in it that iterates over all the nodes so V. In that for loop I also call a function that has a for loop in it. That function iterates over the visited nodes, so worst case it would be V. So we get $V * V$, big $\Theta(V^2)$
+big $\Theta(V^2)$ Because I have a while loop that at most would iterate V times, with one for loop in it that iterates over all the nodes so V * V. In that for loop I also call a function that has a for loop in it. That function iterates over the visited nodes, so worst case it would be V. So we get $V * V * V$, big $\Theta(V^3)$
 
 ## Bonus
 
@@ -37,4 +37,4 @@ Implement and analyze breadth-first search.
 
 ### Worst Case Runtime BFS
 big $\Theta(V^2)$
-I have a for loop that at the worse could iterate V times. Then a for loop that calls a function with a for loop in it. So the outer for loop iterates over the number of nodes in the graph, V and the inner loop iterates over the visited nodes, so at the worst V. Over all we have $V + V^2$ so we get big $\Theta(V^2)$
+I have a while loop that loops at most V times. In the while loop I have a for loop that at the worse could iterate V times. Then a for loop that calls a function with a for loop in it. So the outer for loop iterates over the number of nodes in the graph, V and the inner loop iterates over the visited nodes, so at the worst V. Over all we have $V^2 + V^3$ so we get big $\Theta(V^3)$
