@@ -8,15 +8,15 @@ function arrayEqual(a, b) {
 
 //function for noRepeated nodes in answer path
 function noRepeats (a, b) {
-  let count = 0;
+    let count = 0;
   for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j < a.length; j++) {
-      if (a[i] == a[j]) {
+    for (let j = 0; j < b.length; j++) {
+      if (a[i] == b[j]) {
         count++;
       }
     }
   }
-  return count == b;
+  return count;
 }
 
 
