@@ -57,7 +57,7 @@ b = [ 0, 4, 3, 2 ];
 c = 4;
 
 //test 
-assert(noRepeats(a,b));
+assert(noRepeats(a,b,c));
 
 
 
