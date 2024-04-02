@@ -5,8 +5,8 @@ function depthFirstSearch(graph, startNode, targetNode) {
     let visited = [];
     stack.push(startNode);
     
-    while (stack.length > 0) {
-        //console.log("new loop");
+    while (visited.length < graph.length) {
+        console.log("new loop");
         visited.push(stack[stack.length - 1]);
         if (stack[stack.length - 1] == targetNode) {
             return visited;
@@ -14,19 +14,13 @@ function depthFirstSearch(graph, startNode, targetNode) {
         
         let tmp = stack[stack.length - 1];
         stack.pop();
-        for (let i = 0; i < graph[tmp].length; i++) {
-            for (let j = 0; j < visited.length; j++) {
-                if (visited[j] == graph[tmp][i]) {
-                    isThere = true;
-                }
-            } 
-            if (isThere == false) { // if not already in visited push it to the stack
+        for (let i = 0; i < graph[tmp].length; i++) { //look at adjacent nodes
+            if (visited[i] == "") { //if not visited then add to the stack
                 stack.push(graph[tmp][i]);
-                //console.log("this is added to the stack: " + graph[tmp][i]);
             }
         }
-        //console.log("visited: " + visited);
-        //console.log("stack: " + stack);
+        console.log("visited: " + visited);
+        console.log("stack: " + stack);
     }
     
     return [];
