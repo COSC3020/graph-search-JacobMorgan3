@@ -36,5 +36,5 @@ big $\Theta(V^2)$ Because I have a while loop with one for loop in it that itera
 Implement and analyze breadth-first search.
 
 ### Worst Case Runtime BFS
-big $\Theta(V^3)$
-I have a while loop with two for loops in it, one nested in the other. The while loop happens at most V times. The first for loop happens at most V times as well (if every node was connected). the second for loop happens at most V times (if we visited all nodes and dont find it). So we get V * V * V
+big $\Theta(V^2)$
+I have a for loop that at the worse could iterate V times. Then a for loop that calls a function with a for loop in it. So the outer for loop iterates over the number of nodes in the graph, V and the inner loop iterates over the visited nodes, so at the worst V. Over all we have $V + V^2$ so we get big $\Theta(V^2)$
