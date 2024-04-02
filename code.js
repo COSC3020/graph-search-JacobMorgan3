@@ -56,7 +56,17 @@ function breadthFirstSearch (graph, startNode, targetNode) {
     queue.push(startNode);
     let count = 1;
     while (queue.length > 0) {
-        //console.log("loop number: " + count);
+        console.log("loop number: " + count);
+        let skip = false;
+        for (let i = 0; i < visited.length; i++) { //make sure we dont visit a node twice 
+            if (queue[0] == visited[i]) {
+                skip = true;
+            }
+        }
+        if (skip == true) {
+            queue.shift();
+            continue;
+        }
         visited.push(queue[0]);
         if (queue[0] == targetNode) {
             return visited;
@@ -65,20 +75,12 @@ function breadthFirstSearch (graph, startNode, targetNode) {
         
         for (let i = 0; i < graph[tmp].length; i++) {
             //console.log(graph[tmp][i]);
-            for (let j = 0; j < visited.length; j++) {
-                //console.log("here");
-                if (visited[j] == graph[tmp][i]) {
-                    isThere = true;
-                }
-            } 
-            if (isThere == false) { // if not already in visited push it to the queue
+            if (alreadyInVisited(graph, visited, tmp) == false) {
                 queue.push(graph[tmp][i]);
-                //console.log("added to the queue: " + graph[tmp][i]);
             }
         }
-        isThere = false;
-        //console.log("visited: " + visited);
-        //console.log("queue: " + queue);
+        console.log("visited: " + visited);
+        console.log("queue: " + queue);
         count++;
     }
     
