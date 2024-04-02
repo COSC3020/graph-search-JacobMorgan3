@@ -7,7 +7,7 @@ function arrayEqual(a, b) {
 }
 
 //////////////Test to check for duplicates taken from Stack Overflow
-function checkIfArrayIsUnique(Array) {
+function NoRepeats(Array) {
   return Array.length === new Set(Array).size;
 }
 
