@@ -55,7 +55,7 @@ function breadthFirstSearch (graph, startNode, targetNode) {
     let queue = [];
     queue.push(startNode);
     let count = 1;
-    while (queue.length > 0) {
+    while (visited.length < graph.length) {
         console.log("loop number: " + count);
         let skip = false;
         for (let i = 0; i < visited.length; i++) { //make sure we dont visit a node twice 
