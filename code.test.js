@@ -7,7 +7,7 @@ function arrayEqual(a, b) {
 }
 
 //function for noRepeated nodes in answer path
-function noRepeats (a, b) {
+function noRepeats (a, b, c) {
     let count = 0;
   for (let i = 0; i < a.length; i++) {
     for (let j = 0; j < b.length; j++) {
@@ -16,7 +16,7 @@ function noRepeats (a, b) {
       }
     }
   }
-  return count;
+  return count == c;
 }
 
 
@@ -53,7 +53,8 @@ startNode = 0;
 targetNode = 2;
 
 a = code.depthFirstSearch(graph, startNode, targetNode);
-b = 4;
+b = [ 0, 4, 3, 2 ];
+c = 4;
 
 //test 
 assert(noRepeats(a,b));
@@ -95,7 +96,8 @@ startNode = 0;
 targetNode = 2;
 
 a = code.breadthFirstSearch(graph, startNode, targetNode);
-b = 5; //should be 5 based on how BFS works
+b = [ 0, 1, 4, 3, 2 ]; //answer 
+c = 5; //should be 5 repeats, no more
 
 //test 
 assert(noRepeats(a,b));
