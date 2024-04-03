@@ -16,7 +16,7 @@ function depthFirstSearch(graph, startNode, targetNode) {
         //console.log("tmp: " + tmp);
         stack.pop();
         for (let i = 0; i < graph[tmp].length; i++) { //look at adjacent nodes
-            if (visited[i] == false) {
+            if (visited[i] != graph[tmp][i]) {
                 stack.push(graph[tmp][i]);
             }
         }
@@ -26,16 +26,6 @@ function depthFirstSearch(graph, startNode, targetNode) {
     }
     
     return [];
-}
-
-
-function alreadyInVisited (graph, visited, tmp) { //function to see if a node is already in the array visited
-    for (let i = 0; i < visited.length; i++) { //loop through visited
-        if (visited[i] != graph[tmp][i]) {
-        }
-        else return true;
-    }
-    return false;
 }
 
 
