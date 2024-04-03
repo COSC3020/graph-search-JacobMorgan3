@@ -29,7 +29,7 @@ answer, including your reasoning, to this markdown file.
 
 ### Worst Case Runtime DFS 
 I followed an algorithm instructions online to write DFS, I then used DFS to write BFS. 
-big $\Theta(V^2)$ Because I have a while loop that at most would iterate V times, with one for loop in it that iterates over all the nodes so V * V. In that for loop I also call a function that has a for loop in it. That function iterates over the visited nodes, so worst case it would be V. So we get $V * V * V$, big $\Theta(V^3)$
+big $\Theta(V^2)$ Because I have a while loop that at most would iterate V times, with one for loop in it that iterates over all the nodes so V * V. So we get $V * V$, big $\Theta(V^2)$
 
 ## Bonus
 
