@@ -1,6 +1,5 @@
 function depthFirstSearch(graph, startNode, targetNode) {
     
-    let isThere = false;
     let stack = [];
     let visited = [];
     stack.push(startNode);
@@ -17,7 +16,7 @@ function depthFirstSearch(graph, startNode, targetNode) {
         //console.log("tmp: " + tmp);
         stack.pop();
         for (let i = 0; i < graph[tmp].length; i++) { //look at adjacent nodes
-            if (alreadyInVisited(graph, visited, tmp) == false) {
+            if (visited[i] == false) {
                 stack.push(graph[tmp][i]);
             }
         }
