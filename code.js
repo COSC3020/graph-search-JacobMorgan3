@@ -64,7 +64,7 @@ function breadthFirstSearch (graph, startNode, targetNode) {
         
         for (let i = 0; i < graph[tmp].length; i++) {
             //console.log(graph[tmp][i]);
-            if (alreadyInVisited(graph, visited, tmp) == false) {
+            if (visited[i] != graph[tmp][i]) {
                 queue.push(graph[tmp][i]);
             }
         }
