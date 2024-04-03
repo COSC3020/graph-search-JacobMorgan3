@@ -79,4 +79,4 @@ function breadthFirstSearch (graph, startNode, targetNode) {
 
 
 //add so i can test functions
-module.exports = {depthFirstSearch, breadthFirstSearch, alreadyInVisited};
+module.exports = {depthFirstSearch, breadthFirstSearch};
