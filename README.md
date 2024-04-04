@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/M24O3lId)
 # Search in Graphs
 
 Recall the pseudocode for Depth-First Search:
@@ -26,6 +27,13 @@ the function and run automatically when you commit through a GitHub action.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
+### Worst Case Runtime DFS 
+I followed an algorithm instructions online to write DFS, I then used DFS to write BFS. 
+Because I have a while loop that at most would iterate V times, with one for loop in it that iterates over the connected edges, at it's worst V when connected to each other node. So we get $V * V$, big $\Theta(V^2)$
+
 ## Bonus
 
 Implement and analyze breadth-first search.
+
+### Worst Case Runtime BFS
+I have a while loop that at the worse could iterate V times. Then in the while loop, a for loop that at the worst iterates over the number of nodes in the graph. While still in the while loop I have another for loop that iterates over all edges connected to a node so at it's worst V, when connected to every other node. Over all we have $V^2 + V^2$ so we get big $\Theta(V^2)$
